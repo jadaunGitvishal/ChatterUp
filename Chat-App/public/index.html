@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ChatterUp</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- Join / onboarding modal: asks for a name before entering the chat -->
+  <div id="join-modal" class="modal-overlay">
+    <div class="modal">
+      <h1>Welcome to ChatterUp</h1>
+      <p>Tell us your name to join the conversation.</p>
+      <input id="join-name-input" type="text" placeholder="Your name" maxlength="30" autocomplete="off" />
+      <button id="join-btn">Join chat</button>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <div class="chat-panel">
+      <header class="chat-header">
+        <span class="welcome-text">welcome <strong id="welcome-name"></strong></span>
+        <span id="typing-indicator" class="typing-indicator"></span>
+      </header>
+
+      <div id="messages" class="messages"></div>
+
+      <form id="message-form" class="message-form">
+        <input id="message-input" type="text" placeholder="Enter your message..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <aside class="users-panel">
+      <div class="users-panel-header">connected users <span id="user-count">0</span></div>
+      <ul id="users-list" class="users-list"></ul>
+    </aside>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
